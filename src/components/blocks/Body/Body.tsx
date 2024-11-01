@@ -59,7 +59,7 @@ const categories = [
 
 function Body({ selectedCategory, setSelectedCategory }) {
   return (
-    <div className="container py-6 grid grid-cols-12 gap-6">
+    <div className="w-full py-6 grid grid-cols-12 gap-6">
       {/* Sidebar */}
       <aside className="hidden md:block col-span-3 space-y-4">
         <nav className="space-y-2">
