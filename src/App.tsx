@@ -2,7 +2,7 @@ import Header from "@/components/blocks/Header/Header"; // Import the new Header
 import Body from "@/components/blocks/Body/Body"; // Import the new Body component
 import { useState } from "react";
 
-import { InstantSearch } from "react-instantsearch";
+import { InstantSearch, Configure } from "react-instantsearch";
 
 import { algoliasearch } from "algoliasearch";
 
@@ -16,6 +16,8 @@ function App() {
 
   return (
     <InstantSearch searchClient={searchClient} indexName="my_first_index">
+            <Configure hitsPerPage={42} />
+
       <div className="min-h-screen bg-background">
         <Header
           selectedCategory={selectedCategory}

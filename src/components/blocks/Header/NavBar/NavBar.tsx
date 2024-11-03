@@ -5,37 +5,28 @@ import {
     NavigationMenuList,
     navigationMenuTriggerStyle,
   } from "@/components/ui/navigation-menu";
-  function NavBar() {
+
+import React from "react";
+import {useRefinementList, UseRefinementListProps} from "react-instantsearch";
+
+
+
+  function NavBar(props: UseRefinementListProps) {
+    const {
+      items,
+      refine,
+    } = useRefinementList(props);
     return (
         <div>
-          {/* Navigation Bar */}
           <NavigationMenu className="hidden md:flex justify-center w-full">
             <NavigationMenuList className="space-x-4">
-              <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  New Arrivals
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Best Sellers
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Deals
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Collections
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Brands
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+              {items.map(item => (
+                <NavigationMenuItem key={item.label}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={() => refine(item.value)}>
+                    {item.label}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
             </NavigationMenuList>
           </NavigationMenu>
         </div>

@@ -23,7 +23,7 @@ function SearchBar({ selectedCategory, setSelectedCategory }) {
             <Menu className="h-5 w-5" />
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+        <SheetContent side="left" className="w-[300px] sm:w-[400px] custom-bg">
           <nav className="flex flex-col gap-4">
             {categories.map((category) => (
               <a

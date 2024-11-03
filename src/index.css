@@ -59,3 +59,7 @@
     background: var(--background);
   }
 }
+
+.custom-bg {
+    background-color: rgb(255, 255, 255); /* Explicitly set to white */
+}

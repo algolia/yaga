@@ -81,6 +81,8 @@ PaginationPrevious.displayName = 'PaginationPrevious';
 
 const PaginationNext = ({
   className,
+  numChevron,
+  isText,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
@@ -90,6 +92,7 @@ const PaginationNext = ({
     {...props}
   >
     <span>Next</span>
+
     <ChevronRightIcon className="h-4 w-4" />
   </PaginationLink>
 );
