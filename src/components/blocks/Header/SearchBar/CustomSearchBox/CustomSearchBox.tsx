@@ -8,7 +8,7 @@ import { useState, useRef } from 'react';
 
 function CustomSearchBox(props) {
     const { query, refine } = useSearchBox(props);
-    const { status, uiState, setIndexUiState } = useInstantSearch();
+    const { setIndexUiState } = useInstantSearch();
     const [inputValue, setInputValue] = useState(query);
 
 

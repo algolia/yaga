@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import CustomSearchBox from './CustomSearchBox/CustomSearchBox';
-import { useInstantSearch } from 'react-instantsearch';
+
 
 const categories = [
   "All Products",
@@ -18,7 +18,7 @@ const categories = [
 
 
 function SearchBar({ selectedCategory, setSelectedCategory }) {
-  const { uiState, setUiState } = useInstantSearch();
+  
   return (
     <div className="flex items-center gap-4 mb-4 justify-between">
       <Sheet>
