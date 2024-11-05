@@ -11,7 +11,7 @@ import { usePagination } from "react-instantsearch";
 
 export function CustomPagination() {
   const { currentRefinement, nbPages, refine } = usePagination();
-  console.log(currentRefinement, nbPages, refine);
+
   return (
     <Pagination>
       <PaginationContent>

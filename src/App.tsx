@@ -14,9 +14,10 @@ const searchClient = algoliasearch(
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("All Products");
 
+
   return (
     <InstantSearch searchClient={searchClient} indexName="my_first_index">
-            <Configure hitsPerPage={42} />
+      <Configure hitsPerPage={42} />
 
       <div className="min-h-screen bg-background">
         <Header
@@ -27,6 +28,7 @@ function App() {
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
+
       </div>
     </InstantSearch>
   );

@@ -79,7 +79,6 @@ function CustomSearchBox(props) {
           <Search className="h-5 w-5" />
           <span className="sr-only">Search</span>
         </Button>
-        <span hidden={!isSearchStalled}>Searching…</span>
       </form>
       <Button variant="ghost" size="icon" className="xs:hidden">
         <Search className="h-5 w-5" />
