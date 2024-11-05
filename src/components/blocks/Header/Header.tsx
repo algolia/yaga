@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react';
 function Header({ selectedCategory, setSelectedCategory }) {
 
   const [isVisible, setIsVisible] = useState(true);
+
+
   let lastScrollY = window.scrollY;
   const scrollThreshold = 100; // Set the scroll threshold (in pixels)
 

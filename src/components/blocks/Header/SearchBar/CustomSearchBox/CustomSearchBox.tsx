@@ -8,11 +8,12 @@ import { useState, useRef } from 'react';
 
 function CustomSearchBox(props) {
     const { query, refine } = useSearchBox(props);
-    const { status } = useInstantSearch();
+    const { status, uiState, setIndexUiState } = useInstantSearch();
     const [inputValue, setInputValue] = useState(query);
+
+
     const inputRef = useRef(null);
   
-    const isSearchStalled = status === 'stalled';
   
     function setQuery(newQuery) {
       setInputValue(newQuery);
@@ -26,6 +27,10 @@ function CustomSearchBox(props) {
         fill="none"
         viewBox="0 0 501 501"
         className=" w-8 hidden md:block mx-4"
+        onClick={() => {
+          setQuery(''); // Clear query
+          setIndexUiState((prev) => ({ ...prev, refinementList: {} }));
+        }}
       >
         <path
           fill="#003DFF"
